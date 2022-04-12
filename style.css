@@ -1,0 +1,208 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* untuk body */
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+/* untuk page jumbotron */
+.jumbotron {
+  background-color: white;
+}
+/* untuk page about */
+.about {
+  background-color: #0099ff;
+}
+/* untuk page resume */
+.resume {
+  background-color: #0099ff;
+}
+/* untuk efek 3D pada col skills */
+#myskills {
+  perspective: 1000px;
+  height: 28vh;
+  width: 400px;
+  cursor: pointer;
+}
+.card {
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 14px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+}
+.front {
+  background: linear-gradient(to bottom, skyblue, #0099ff);
+}
+.front img {
+  width: 5em;
+}
+.content {
+  transform: translateZ(60px);
+}
+.content h3 {
+  font-size: 22px;
+  margin-top: 1em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.content p {
+  font-size: 14px;
+  line-height: 2em;
+  letter-spacing: 0.02em;
+  padding: 0 3em;
+}
+.back {
+  background-color: #23292e;
+  transform: rotateX(180deg);
+}
+#myskills:hover .card {
+  transform: rotateX(180deg);
+}
+/* mengatur media screen */
+@media screen and (max-width: 600px) {
+  .navbar {
+    height: 100px;
+  }
+  .jumbotron img {
+    visibility: hidden;
+  }
+  .textcuy {
+    text-align: center;
+    height: 1000px;
+    font-weight: 00;
+  }
+  .about {
+    justify-content: center;
+    font-size: 0.1px;
+    text-size-adjust: 1px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .navbar {
+    height: 100px;
+  }
+  a#scroll-btn {
+    font-size: 12px;
+  }
+}
+/* untuk teks H1 di jumbotron */
+h1 {
+  font-size: 50px;
+  background: -webkit-linear-gradient(skyblue, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* untuk teks h5 pada resume */
+#h5skills {
+  font-size: 20px;
+  background: -webkit-linear-gradient(rgb(255, 8, 144), rgb(183, 0, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* untuk teks gradien di jumbotron */
+#abc {
+  font-size: 20px;
+  background: -webkit-linear-gradient(rgb(255, 8, 144), rgb(183, 0, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/*untuk efek navigasi  */
+.button1,
+.button2,
+.button3,
+.button4 {
+  color: black;
+  border: 2px;
+  border-radius: 12px;
+}
+
+.button1:hover,
+.button2:hover,
+.button3:hover,
+.button4:hover {
+  background: -webkit-linear-gradient(skyblue, #0099ff);
+  color: white;
+}
+/* untuk fitur scroll down */
+a#scroll-btn {
+  position: absolute;
+  height: 4.5em;
+  width: 2.5em;
+  border: 0.2em solid #0099ff;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 3em;
+  border-radius: 3em;
+}
+a#scroll-btn:before {
+  position: absolute;
+  content: "";
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 1em;
+  bottom: 4em;
+  height: 1em;
+  width: 1em;
+  background-color: #0099ff;
+  border-radius: 50%;
+  animation: move-down 2s infinite;
+}
+a#scroll-btn:after {
+  position: absolute;
+  content: "Scroll Down";
+  display: block;
+  width: 12em;
+  text-align: center;
+  left: -5.2em;
+  top: 4em;
+  bottom: 3em;
+  font-size: 1.2em;
+  color: #0099ff;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+@keyframes move-down {
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(2.8em);
+    opacity: 0;
+  }
+}
+/* untuk image pada about */
+.image {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.image img {
+  width: 100%;
+  height: 100;
+  transition: all 0.5s ease-in-out;
+}
+
+.image:hover img {
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+}
